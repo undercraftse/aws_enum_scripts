@@ -148,7 +148,7 @@ if __name__ == "__main__":
         client = client_setup(args.access_key,args.secret_key,args.session_token,args.region)
         enum_bucket(client,args.bucketname)
 
-    elif args.access_key is None or args.secret_key is None:
+    elif ((args.access_key is None or args.secret_key is None) and args.bucketlist is None):
         print("Specify both access_key and secret_key or nethier to intiate anonymous scan")
 
     # do auth scan of specific bucket
